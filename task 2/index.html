@@ -6,6 +6,7 @@
 		<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 		<meta charset="utf-8">
 		<title>Simple Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Eugene Makarov">
 		<meta name="description" content="Awesome blog with the latest international news from Name Surname and fantastic post-pictures">
 		<meta property="og:image" content="images/ama.png">
@@ -15,28 +16,29 @@
 	<body class="body">
 		<header class="header">
 			<div class="rectangle">
-				<a class="rectangle_media" href=""><i class="fas fa-home"></i> Home</a>
-				<a class="rectangle_media" href=""><i class="fas fa-file-signature"></i> Contact</a>
-				<a class="rectangle_media" href=""><i class="fas fa-bell"></i> Notifications</a>
+				<a class="rectangle__media" href=""><i class="fas fa-home"></i> Home</a>
+				<a class="rectangle__media" href=""><i class="fas fa-file-signature"></i> Contact</a>
+				<a class="rectangle__media" href=""><i class="fas fa-bell"></i> Notifications</a>
 			</div>
 			<div class="headline">
-				<h1 class="headline_page-theme" >SimpleEvent</h1>
-				<h3 class="headline_page-slogan">Your slogan goes here</h3>
+				<h1 class="headline__page-theme" >SimpleEvent</h1>
+				<h3 class="headline__page-slogan">Your slogan goes here</h3>
 			</div>			
 			<div class="search-form">
-				<input class="search-form_text" type="search" placeholder="search phrase">
-				<input class="search-form_button" type="submit" value="SEARCH">
+				<input class="search-form__text" type="search" placeholder="search phrase">
+				<input class="search-form__button" type="submit" value="SEARCH">
 			</div>
-			<a id="header_search" href=""><i class="fas fa-search fa-4x"></i></a>
+			<a id="header__search" href=""><i class="fas fa-search fa-4x"></i></a>
 		</header>
+		<div class="pocket"></div>
 		<nav class="navigation">
-			<ul class="navigation_menu">
-				<li><a class="navigation_item" href="">Home</a></li>
-				<li><a class="navigation_item" href="">Our Products</a></li>
-				<li><a class="navigation_item" href="">About Us</a></li>
-				<li><a class="navigation_item" href="">Portfolio</a></li>
-				<li><a class="navigation_item" href="">Contacts</a></li>
-				<li><a class="navigation_item" id="submenu_container" href="">Category</a>
+			<ul class="navigation__menu">
+				<li><a class="navigation__item" href="">Home</a></li>
+				<li><a class="navigation__item" href="">Our Products</a></li>
+				<li><a class="navigation__item" href="">About Us</a></li>
+				<li><a class="navigation__item" href="">Portfolio</a></li>
+				<li><a class="navigation__item" href="">Contacts</a></li>
+				<li class="submenu__container"><a class="navigation__item" href="">Category</a>
 					<ul class="submenu">
 		            	<li><a href="">Business</a></li>
 		            	<li><a href="">Art & Photography</a></li>
@@ -52,42 +54,42 @@
 		</nav>	
 		<main class="main">
 			<article class="article">
-				<section class="post">
-					<h2 class="post_theme">Lorem ipsum</h2>
-					<img class="post_image" alt="First post picture" src="images/pic1_2.jpg">
-					<img class="post_image-new" alt="This post is a new one" src="images/new.png">
-					<p class="post_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<input class="post_button" type="submit" value="MORE">
+				<section class="post post_first">
+					<h2 class="post__theme">Lorem ipsum</h2>
+					<img class="post__image" alt="First post picture" src="images/pic1_2.jpg">
+					<img class="post__image_new" alt="This post is a new one" src="images/new.png">
+					<p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<input class="post__button" type="submit" value="MORE">
 					<div class="triangle-new"></div>
 				</section>
 				<section class="post">
-					<h2 class="post_theme">Lorem ipsum</h2>
-					<img class="post_image" alt="Second post picture" src="images/pic2_2.jpg">
-					<p class="post_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<input class="post_button" type="submit" value="MORE">
+					<h2 class="post__theme">Lorem ipsum</h2>
+					<img class="post__image" alt="Second post picture" src="images/pic2_2.jpg">
+					<p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<input class="post__button" type="submit" value="MORE">
 					<div class="triangle"></div>
 				</section>
 				<section class="post">
-					<h2 class="post_theme">Lorem ipsum</h2>
-					<img class="post_image" alt="Third post picture" src="images/pic3_2.jpg">
-					<p class="post_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<input class="post_button" type="submit" value="MORE">
+					<h2 class="post__theme">Lorem ipsum</h2>
+					<img class="post__image" alt="Third post picture" src="images/pic3_2.jpg">
+					<p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<input class="post__button" type="submit" value="MORE">
 					<div class="triangle"></div>
 				</section>
 				<section class="post">
-					<h2 class="post_theme">Lorem ipsum</h2>
-					<img class="post_image" alt="Forth post picture" src="images/pic4_2.jpg">
-					<p class="post_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<input class="post_button" type="submit" value="MORE">
+					<h2 class="post__theme">Lorem ipsum</h2>
+					<img class="post__image" alt="Forth post picture" src="images/pic4_2.jpg">
+					<p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<input class="post__button" type="submit" value="MORE">
 					<div class="triangle"></div>
 				</section>
 			</article>
 			<aside class="aside">
 				<div class="about">
-					<h4 class="about_me" >ABOUT ME</h4>
-					<img class="about_my-img" alt="Picture of mine" src="images/ama.jpg">
-					<h4 class="about_myself">Name Surname</h4>
-					<p class="about_my-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<h4 class="about__me" >ABOUT ME</h4>
+					<img class="about__my-img" alt="Picture of mine" src="images/ama.jpg">
+					<h4 class="about__myself">Name Surname</h4>
+					<p class="about__my-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div>
 				<div class="filter-categories">
 					<h4>CATEGORIES</h4>
