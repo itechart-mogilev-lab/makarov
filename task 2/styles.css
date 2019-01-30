@@ -346,12 +346,22 @@
 
 	.search-form { display: none; }
 
-	.navigation__menu {
-		display: flex;
-		justify-content: space-around;
+	.post {
+		grid-template-areas: 
+		'. theme new__post'
+		'. image .'
+		'txt txt txt'
+		'. . btn';
+		grid-template-columns: 1fr 1fr 0.5fr;
 	}
 
-	.navigation__submenu-container { display: block; }
+	.post__button { margin-bottom: 10px; }
+
+	.post__image-new { justify-self: end; } 
+
+	.post__triangle { display: none; }
+
+	.navigation__submenu-container { display: inline-block; }
 
 	.submenu { width: 200px; }
 
