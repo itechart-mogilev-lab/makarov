@@ -1,5 +1,4 @@
 # makarov
 Макаров Евгений
-<Rickrolling stuff> 
-  https://clck.ru/9TFat
-</Rickrolling stuff> 
+Ссылка на GitHub Pages:
+jastapanda.github.io
