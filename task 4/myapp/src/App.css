@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 5s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.game-board {
+  margin-top: 10%;
+  position: relative;
+}
+.game-info {
+  position: relative;
+}
+
+.hamster {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
