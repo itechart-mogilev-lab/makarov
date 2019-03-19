@@ -3,34 +3,12 @@
   padding: 0;
 }
 
-li{
-	display: inline-block;
-}
-
-li:hover {
-	background: #f4f4f4;
-}
-
-ul {
-	list-style: none;
-}
-
-a:not(.rectangle__media) {
+.submenu__link {
 	display: block;
   	text-decoration: none;
-  	transition: .5s linear;
-}
-
-h4 {
-	margin: 20px 0 0 10px;
-}
-
-img {
-	border-radius: 10px;
-}
-
-input {
-	border: none;
+	color: white;
+	padding: 12px 100px;
+	border-bottom: 1px solid white;
 }
 
 .body {
@@ -44,22 +22,28 @@ input {
 }
 
 .pocket {
-	grid-area: pocket;
 	height: 30px;
-	margin-left: 5%;
-	margin-right: 5%;
 	background: linear-gradient(45deg, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%);
 	border-bottom-right-radius: 30px;
 	border-bottom-left-radius: 30px;
 }
 
+.body__pocket {
+	grid-area: pocket;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
 .header {
-	grid-area: header;
 	display: grid;
 	grid-template-areas:
 	'headline . rectangle'
 	'. . search';
 	background: linear-gradient(45deg, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%);
+}
+
+.body__header {
+	grid-area: header;
 }
 
 .headline__page-theme {
@@ -73,19 +57,22 @@ input {
 	margin: 0 0 0 10%;
 }
 
-.rectangle {
-	grid-area: rectangle;
+.rectangle { 
 	width: 300px;
 	height: 30px;
-	position: fixed;
-	right: 0;
-	margin-right: 10%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	background: #e0880d;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+}
+
+.header__rectangle {
+	grid-area: rectangle;
+	position: fixed;
+	z-index: 2;
+	right: 10%;	
 }
 
 .rectangle__media {
@@ -95,20 +82,26 @@ input {
 
 .rectangle__media:active { color: black; }
 
-.headline { grid-area: headline; }
+.header__headline { grid-area: headline;
+	margin-left: 25%;
+}
 
-#header__search { display: none; }
+.header__search { display: none; }
 
 .search-form {
 	width: 300px;
-	position: relative;
+}
+
+.header__search-form {
 	grid-area: search; 
+	position: relative;
 	justify-self: center;
 }
 
 .search-form__text {
 	outline: none;
-	width: 100%;
+	border: none;
+	width: 300px;
 	padding: 10px 80px 10px 20px;
 	box-shadow: inset 0 0 5px rgb(186, 106, 14);
 	border-radius: 12px;
@@ -117,6 +110,7 @@ input {
 .search-form__button {
 	position: absolute;
 	outline: none;
+	border: none;
 	background: #ba6605;
 	color: white;
 	width: 70px;
@@ -134,55 +128,58 @@ input {
 	opacity: 1; 
 }
 
-.navigation {
+.body__navigation {
 	grid-area: navigation;
 	padding-left: 20px;
 	border-bottom: 1px solid #adadad;
 }
-.main {
+
+.body__main {
 	grid-area: main;
 }
 
-.submenu__container { display: none; }
-
-.navigation__menu > li {	position: relative; }
+.navigation__submenu-container { 
+	display: none; 
+	position: relative;
+}
 
 .submenu {
 	display: block;
+	list-style-type: none;
 	background: #f9861b;
-	position: absolute;
-	right: 0;
-	top: 100%;
 	width: 400px;
 	opacity: 0;
 	transform: scaleY(0);
 	transform-origin: 0 0;
 	transition: .5s ease-in-out;
 }
-.submenu a {
-	color: white;
-	padding: 12px 100px;
-	border-bottom: 1px solid white;
+
+.navigation__submenu {
+	position: absolute;
+	right: 0;
+	top: 100%;
 }
-.navigation__menu > li:hover .submenu {
+
+.navigation__submenu-container:hover .submenu {
 	opacity: 1;
 	transform: scaleY(1);
 }
-.submenu li { display: block; }
 
-.submenu li:hover {
+.submenu__link:hover {
 	transition: .5s linear;
 	background: #ba6605;
 }
 
 .navigation__item {
+	display: block;
+  	text-decoration: none;
 	border-left: 1px solid #e4e4e4;
 	padding-left: 10px;
 	margin: 1em 1em 1em 0;
 	color: black;
 }
 
-.navigation__menu li:first-child { border-left: none; }
+.navigation__item-container { display: inline-block; }
 
 .main {	
 	display: grid;
@@ -192,12 +189,11 @@ input {
 	grid-column-gap: 20px;
 }
 
-.article {	
-	grid-area: article;
-}
+.main__article { grid-area: article; }
 
 .post__button {
 	grid-area: btn;
+	border: none;
 	height:  30px;
 	width: 100px;
 	background: #f9861b;
@@ -211,30 +207,33 @@ input {
 
 .post__text { grid-area: txt; }
 
-.post__image { grid-area: image; }
+.post__image { 
+	grid-area: image;
+	border-radius: 10px;
+}
 
-.post__image_new {
+.post__image-new {
 	grid-area: new__post;
 	height: 62px;
 	width: 62px;
 }
 
-.triangle-new {
-	grid-area: triangle;
-  	height: 0;
-  	width: 0;
-  	display: inline-block;
-  	border-top: 62px solid #e4e4e4;
-  	border-right: 62px solid white;
-}
-
-.triangle {
+.post__triangle {
 	grid-area: triangle;
   	height: 0;
   	width: 0;
   	display: inline-block;
   	border-top: 62px solid transparent;
   	border-right: 62px solid transparent;
+}
+
+.post__triangle_new {
+	grid-area: triangle;
+  	height: 0;
+  	width: 0;
+  	display: inline-block;
+  	border-top: 62px solid #e4e4e4;
+  	border-right: 62px solid white;
 }
 
 .post__theme { 
@@ -244,6 +243,11 @@ input {
 	font-weight: lighter;
 }
 
+.article__post {
+	padding-left: 10px;
+  	margin-bottom: 20px;
+  	border-bottom: 1px solid #e4e4e4;
+}
 .post {
 	display: grid;
 	grid-template-areas: 
@@ -252,25 +256,26 @@ input {
 	'image image txt txt txt txt .'
 	'. . . . . btn  triangle';
 	grid-gap: 10px;
-  	padding-left: 10px;
-  	margin-bottom: 20px;
-  	border-bottom: 1px solid #e4e4e4;
 }
 
-.post_first {
+.article__post_first {
 	background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(255,255,255,1) 100%);
 }
 
 .aside {
-	grid-area: aside;
 	background: #ededed;
 	border-radius: 10px;
+}
+
+.main__aside {
+	grid-area: aside;
 	margin-right: 10px;
 	margin-top: 10px;
 }
 
 .about__my-img {
 	grid-area: my__img;
+	border-radius: 10px;
 	margin: 17px;
 	height: 90px;
 	width: 90px;
@@ -280,6 +285,7 @@ input {
 
 .about__myself {
 	grid-area: myself;
+	margin: 20px 0 0 10px;
 	margin: 0;
 }
 
@@ -288,7 +294,12 @@ input {
 	margin-right: 5px;
 }
 
-.about__me {	grid-area: about__me; }
+.about__me {	
+	grid-area: about__me;
+	margin: 20px 0 0 10px;
+}
+
+.filter__categories { margin: 20px 0 0 10px; }
 
 .about {
 	display: grid;
@@ -298,13 +309,11 @@ input {
 	'my__img my__info';
 }
 
-.categories {
-	display: none;
-}
+.categories { display: none; }
 
-.categories-types a, .filter-date a {
-	display: flex;
-	flex-direction: column;
+.filter__link {
+	display: block;
+  	text-decoration: none;
 	margin: 6px 44px 6px 34px;
 	border-bottom: 1px solid #adadad;
 	color: black;
@@ -314,32 +323,22 @@ input {
 
 	.aside { display: none;	}
 
-	.main {
-		display: block;
-	}
+	.main {	display: block;	}
 
-	.body {
-		grid-template-columns: 0.1fr 0.8	fr 0.1fr;
-	}
+	.body {	grid-template-columns: 0.1fr 0.8fr 0.1fr; }
 
-	#submenu__container { display: block; }
+	.navigation__submenu-container { display: inline-block; }
 
 	.submenu { width: 200px; }
 
-	.submenu a { padding: 12px 20px; }
+	.submenu__link { padding: 12px 20px; }
 }
 
 @media screen and (max-width: 767px) {
 
-	.body {
-		grid-template-columns: 0 1fr 0;
-	}
+	.body {	grid-template-columns: 0 1fr 0;	}
 
-	.main {
-		display: block;
-	}
-
-	li:hover { background-color: transparent; }
+	.main {	display: block;	}
 
 	.aside { display: none;	}
 
@@ -347,38 +346,42 @@ input {
 
 	.search-form { display: none; }
 
-	.navigation__menu {
-		display: flex;
-		justify-content: space-around;
+	.post {
+		grid-template-areas: 
+		'. theme new__post'
+		'. image .'
+		'txt txt txt'
+		'. . btn';
+		grid-template-columns: 1fr 1fr 0.5fr;
 	}
 
-	.navigation {
-		align: center;
-		padding: 0;
-		margin: 0;
-	}
-	.article { margin: 0; }
+	.post__button { margin-bottom: 10px; }
 
-	.submenu__container { display: block; }
+	.post__image-new { justify-self: end; } 
 
-	.submenu { width: 200px;	}
+	.post__triangle { display: none; }
 
-	.submenu a { padding: 12px 20px;	}
+	.navigation__submenu-container { display: inline-block; }
 
-	.headline__page-theme, .headline__page-slogan { margin: 0; }
+	.submenu { width: 200px; }
 
-	.headline {	margin: 10px 20px 20px 20px; }
+	.submenu__link { padding: 12px 20px; }
+
+	.headline__page-theme { margin: 0; }
+
+	.header__headline {	margin: 10px 20px 20px 20px; }
 
 	.header {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	#header__search {
+	.header__search {
+		text-decoration: none;
 		display: flex;
 		color: white;
 		margin: 10px 20px 0 20px;
 		transition: .5s linear;
 	}
-	#header__search:hover { color: black; }
+	.header__search:hover { color: black; }
 }
