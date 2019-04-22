@@ -41,10 +41,6 @@ function ReviewCard(props) {
 }
 
 const styles = theme => ({
-  listItem: {
-    borderBottom: "2px solid rgba(245,0,87,0.2)",
-    borderRadius: "2%"
-  },
   AvatarAndSummary: {
     display: "flex"
   },

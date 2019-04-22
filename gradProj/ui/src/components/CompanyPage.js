@@ -142,11 +142,11 @@ class CompanyPage extends Component {
               ) : null}
             </div>
             <Dialog
-              open={this.state.open}
+              open={this.state.openBlock}
               onClose={this.handleClose}
               aria-labelledby="form-dialog-title"
             >
-              <DialogTitle id="form-dialog-title">Cancel book</DialogTitle>
+              <DialogTitle id="form-dialog-title">Ban</DialogTitle>
               <DialogContent>
                 <TextField
                   autoFocus
@@ -159,7 +159,7 @@ class CompanyPage extends Component {
                 />
               </DialogContent>
               <DialogActions>
-                <Button onClick={this.handleClose}>Back</Button>
+                <Button onClick={this.handleCloseBlockDialog}>Back</Button>
                 <Button
                   onClick={this.handleBlockCompany}
                   variant="outlined"
@@ -300,7 +300,11 @@ const styles = theme => ({
     flexDirection: "column"
   },
   main: {
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    [theme.breakpoints.down(660)]: {
+      width: "auto"
+    },
+    width: 500,
   },
   button: {},
   bigAvatar: {

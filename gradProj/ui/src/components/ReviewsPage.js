@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import List from "@material-ui/core/List";
-import { withStyles, Button } from "@material-ui/core";
+import { withStyles, Button, Paper } from "@material-ui/core";
 import ReviewsList from "./ReviewList";
 
 class ReviewsPage extends Component {
@@ -19,16 +19,12 @@ class ReviewsPage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
-        <div className={classes.listAndFilters}>
-          <div className={classes.sortAndList}>
-            <List className={classes.list}>
-              {this.props.reviews ? (
-                <ReviewsList reviews={this.props.reviews} />
-              ) : null}
-            </List>
-          </div>
-        </div>
+      <Paper className={classes.root}>
+        <List className={classes.list}>
+          {this.props.reviews ? (
+            <ReviewsList reviews={this.props.reviews} />
+          ) : null}
+        </List>
         {this.props.total > this.props.limit * this.props.page ? (
           <Button
             onClick={this.handleLoadMore}
@@ -38,7 +34,7 @@ class ReviewsPage extends Component {
             Load more
           </Button>
         ) : null}
-      </div>
+      </Paper>
     );
   }
 }
@@ -46,12 +42,11 @@ class ReviewsPage extends Component {
 const styles = theme => ({
   root: {
     marginTop: 20,
-    backgroundColor: "whitesmoke",
-    boxShadow: "0 1px 7px 1px rgba(0, 0, 0, .1)",
-    border: "1px solid rgba(0, 0, 0, .15)",
-    borderRadius: "4px",
     padding: 25,
-    paddingTop: 8
+    paddingTop: 8,
+    [theme.breakpoints.down(660)]: {
+      padding: 0
+    }
   },
   listAndFilters: {
     display: "flex",
@@ -68,6 +63,5 @@ const styles = theme => ({
     width: "100%"
   }
 });
-
 
 export default withStyles(styles)(ReviewsPage);

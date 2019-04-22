@@ -295,7 +295,7 @@ function OrderForm(props) {
                     fullWidth
                     className={classes.button}
                   >
-                    Confirm booking finally
+                    Confirm order
                   </Button>
                 </>
               ) : (
@@ -315,7 +315,7 @@ function OrderForm(props) {
                     color="primary"
                     to={{ pathname: `/companies/${props.company}` }}
                   >
-                    go to selected company
+                    go to company
                   </Button>
                   <Button
                     onClick={props.resetSelectedCompany}
@@ -368,9 +368,6 @@ const styles = theme => ({
   },
   input: {
     marginBottom: 20
-  },
-  button: {
-    margin: theme.spacing.unit
   },
   priceAndTime: {
     display: "flex"
